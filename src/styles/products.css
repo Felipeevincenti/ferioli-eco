@@ -1,0 +1,111 @@
+.products {
+    background-color: #fff;
+    padding-bottom: 150px;
+}
+
+.products__inner {
+    width: 100%;
+    margin-inline: auto;
+    padding: 0 200px;
+}
+
+.products__title {
+    font-size: 48px;
+    color: var(--color-primary);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.products__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.products__card {
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--duration-fast) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .products__card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+.products__card:active {
+    transform: scale(0.98);
+}
+
+.products__card-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.products__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .products__card:hover .products__card-image img {
+        transform: scale(1.06);
+    }
+}
+
+.products__card-body {
+    background: var(--color-primary-opacity);
+    /* box-shadow: 0px 1px 10px var(--background-light); */
+    padding: 1.25rem;
+    transition: background var(--duration-fast) var(--ease-out);
+}
+
+.products__card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+@media (max-width: 1200px) {
+    .products__inner {
+        padding: 0 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .products {
+        padding: 64px 0;
+    }
+
+    .products__inner {
+        padding: 0 24px;
+    }
+
+    .products__title {
+        font-size: 36px;
+    }
+
+    .products__grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .products__inner {
+        padding: 0 16px;
+    }
+
+    .products__title {
+        font-size: 28px;
+    }
+
+    .products__grid {
+        grid-template-columns: 1fr;
+    }
+}

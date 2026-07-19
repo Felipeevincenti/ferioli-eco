@@ -1,0 +1,179 @@
+.webs {
+    color: var(--color-white);
+}
+
+.webs__inner {
+    display: flex;
+}
+
+.webs__feriolisa {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#550a0fc0), url("images/panoramica.png");
+    background-position: right 70%;
+    padding: 80px 200px;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.feriolisa__info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feriolisa__title {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.feriolisa__title-span {
+    color: var(--color-accent);
+}
+
+.feriolisa__subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-white);
+    letter-spacing: -0.03em;
+}
+
+.feriolisa__text {
+    font-size: 18px;
+    color: var(--color-text-light);
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+.feriolisa__button {
+    background: var(--color-white);
+    border: none;
+    width: fit-content;
+    min-width: 240px;
+    padding: 20px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background var(--duration-fast) var(--ease-out),
+        color var(--duration-fast) var(--ease-out),
+        transform var(--duration-fast) var(--ease-out);
+    cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .feriolisa__button:hover {
+        background: var(--color-accent);
+        color: var(--color-white);
+    }
+}
+
+.feriolisa__button:active {
+    transform: scale(0.97);
+}
+
+.webs__feriolibr {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#112232c0), url("images/panoramica.png");
+    background-position: 15% 70%;
+    padding: 80px 200px;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.feriolibr__info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feriolibr__title {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.feriolibr__title-span {
+    color: var(--color-accent);
+}
+
+.feriolibr__subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-white);
+    letter-spacing: -0.03em;
+}
+
+.feriolibr__text {
+    font-size: 18px;
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+.feriolibr__button {
+    background: var(--color-accent);
+    border: none;
+    width: fit-content;
+    min-width: 240px;
+    padding: 20px 30px;
+    font-size: 16px;
+    color: var(--color-white);
+    font-weight: bold;
+    transition: background var(--duration-fast) var(--ease-out),
+        color var(--duration-fast) var(--ease-out),
+        transform var(--duration-fast) var(--ease-out);
+    cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .feriolibr__button:hover {
+        background: var(--color-white);
+        color: var(--color-accent);
+    }
+}
+
+.feriolibr__button:active {
+    transform: scale(0.97);
+}
+
+@media (max-width: 1200px) {
+
+    .webs__feriolisa,
+    .webs__feriolibr {
+        padding: 60px 80px;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .feriolisa__button,
+    .feriolibr__button {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .webs {
+        padding: 64px 0;
+    }
+
+    .webs__feriolisa,
+    .webs__feriolibr {
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .webs__feriolisa,
+    .webs__feriolibr {
+        padding: 40px 16px;
+    }
+
+    .feriolisa__button,
+    .feriolibr__button {
+        width: 100%;
+        min-width: 0;
+    }
+}

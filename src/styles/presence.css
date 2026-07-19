@@ -1,0 +1,257 @@
+.presence {
+    position: relative;
+    overflow: hidden;
+    padding: 70px 0;
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.presence__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.presence__inner {
+    margin: 0 auto;
+    padding: 0 100px 0 200px;
+    z-index: 2;
+}
+
+.presence__layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    flex: 1;
+}
+
+.presence__content {
+    width: 360px;
+    flex-shrink: 0;
+    flex: 1;
+}
+
+.presence__title {
+    font-size: 48px;
+    line-height: .95;
+    font-weight: 800;
+    margin-bottom: 25px;
+    letter-spacing: -2px;
+}
+
+.presence__subtitle {
+    color: rgba(255, 255, 255, .65);
+    line-height: 1.8;
+    font-size: 17px;
+    margin-bottom: 70px;
+}
+
+.presence__country {
+    margin-bottom: 40px;
+}
+
+.presence__country-label {
+    display: block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .35);
+}
+
+.presence__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.presence__btn {
+    width: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    cursor: pointer;
+    padding: 16px 0;
+    transition: transform var(--duration-normal) var(--ease-out);
+    text-align: left;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .presence__btn:hover {
+        transform: translateX(8px);
+    }
+}
+
+.presence__btn:active {
+    transform: scale(0.98);
+}
+
+.presence__btn-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, .35);
+    transition: .35s;
+    flex-shrink: 0;
+}
+
+.presence__btn-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.presence__btn-title {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.presence__btn-subtitle {
+    color: rgba(255, 255, 255, .45);
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.presence__btn-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, .08);
+    margin-left: 10px;
+    transition: .4s;
+}
+
+.presence__btn.is-active .presence__btn-dot {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.presence__btn.is-active .presence__btn-line {
+    background:
+        linear-gradient(to right,
+            rgba(194, 18, 29, .9),
+            transparent);
+}
+
+.presence__btn.is-active .presence__btn-title {
+    color: white;
+}
+
+.presence__btn.is-active {
+    transform: translateX(12px);
+}
+
+.presence__map {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 560px;
+    perspective: 800px;
+}
+
+.presence__image {
+    width: 400px;
+    max-width: none;
+    z-index: 5;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition:
+        opacity 350ms var(--ease-out),
+        transform 450ms var(--ease-out);
+}
+
+@media(max-width:1200px) {
+    .presence__inner {
+        padding: 0 80px;
+    }
+
+    .presence__map {
+        margin-left: -60px;
+    }
+
+    .presence__image {
+        width: 620px;
+    }
+}
+
+@media(max-width:1024px) {
+    .presence__inner {
+        padding: 0 80px;
+    }
+}
+
+@media(max-width:900px) {
+    .presence {
+            padding: 64px 0;
+    }
+
+    .presence__layout {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .presence__content {
+        width: 100%;
+    }
+
+    .presence__map {
+        margin-left: 0;
+        min-height: auto;
+    }
+
+    .presence__image {
+        width: 100%;
+        max-width: 550px;
+    }
+
+    .presence__rings {
+        display: none;
+    }
+}
+
+@media(max-width:600px) {
+    .presence__inner {
+        padding: 0 24px;
+    }
+
+    .presence__title {
+        font-size: 42px;
+    }
+
+    .presence__subtitle {
+        font-size: 15px;
+    }
+
+    .presence__btn-title {
+        font-size: 20px;
+    }
+
+    .presence__btn-line {
+        display: none;
+    }
+}
+
+@media(max-width:480px) {
+    .presence__inner {
+        padding: 0 16px;
+    }
+
+    .presence__title {
+        font-size: 28px;
+    }
+
+    .presence__subtitle {
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
+
+    .presence__btn-title {
+        font-size: 18px;
+    }
+}

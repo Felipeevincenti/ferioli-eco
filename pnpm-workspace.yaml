@@ -1,3 +1,4 @@
 allowBuilds:
   esbuild: true
   sharp: true
+  typeit: set this to true or false
