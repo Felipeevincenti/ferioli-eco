@@ -1,0 +1,82 @@
+---
+import "../../styles/brasil/header.css";
+---
+
+<header class="br-header" id="br-header">
+  <div class="br-header__inner">
+    <a href="/" class="br-header__logo">
+      <img
+        src="/images/logoferiolibrasilblanco.png"
+        alt="FERIOLI Brasil"
+        class="br-header__logo-img"
+      />
+    </a>
+    <nav class="br-header__nav" id="br-nav">
+      <a href="#hero" class="br-header__link br-header__link--active">Início</a>
+      <a href="#sobre" class="br-header__link">Sobre Nós</a>
+      <a href="#equipamentos" class="br-header__link">Equipamentos</a>
+      <a href="#diferenciais" class="br-header__link">Serviços</a>
+      <a href="#presenca" class="br-header__link">Presença</a>
+    </nav>
+    <button class="br-header__toggle" id="br-toggle" aria-label="Menu">
+      <span class="br-header__toggle-bar"></span>
+      <span class="br-header__toggle-bar"></span>
+      <span class="br-header__toggle-bar"></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("br-header");
+  const nav = document.getElementById("br-nav");
+  const toggle = document.getElementById("br-toggle");
+  const links = nav?.querySelectorAll(".br-header__link:not(.br-header__cta)");
+
+  window.addEventListener("scroll", () => {
+    header?.classList.toggle("br-header--scrolled", window.scrollY > 100);
+  }, { passive: true });
+
+  if (toggle && nav) {
+    function closeMenu() {
+      nav.classList.remove("br-header__nav--open");
+    }
+    function openMenu() {
+      nav.classList.add("br-header__nav--open");
+    }
+    toggle.addEventListener("click", () => {
+      const isOpen = nav.classList.contains("br-header__nav--open");
+      isOpen ? closeMenu() : openMenu();
+    });
+    links?.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+    document.addEventListener("click", (e) => {
+      if (nav.classList.contains("br-header__nav--open") && !nav.contains(e.target) && !toggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+  }
+
+  const sections = [];
+  links?.forEach((link) => {
+    const id = link.getAttribute("href")?.slice(1);
+    const section = document.getElementById(id);
+    if (section) sections.push({ link, section });
+  });
+
+  if ("IntersectionObserver" in window && sections.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            links.forEach((l) => l.classList.remove("br-header__link--active"));
+            const active = sections.find((s) => s.section === entry.target);
+            active?.link.classList.add("br-header__link--active");
+          }
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px" },
+    );
+    sections.forEach(({ section }) => observer.observe(section));
+  }
+</script>

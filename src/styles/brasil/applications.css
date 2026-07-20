@@ -1,0 +1,118 @@
+.br-apps {
+  position: relative;
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+.br-apps__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.br-apps__title {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+
+.br-apps__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.br-apps__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.br-apps__card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.br-apps__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.br-apps__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 32px;
+  transition: background var(--duration-normal) var(--ease-out);
+}
+
+.br-apps__card-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .br-apps__card:hover img {
+    transform: scale(1.08);
+  }
+
+  .br-apps__card:hover .br-apps__card-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(194, 18, 29, 0.75) 0%,
+      rgba(0, 0, 0, 0.3) 70%,
+      transparent 100%
+    );
+  }
+}
+
+#aplicacoes {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 1024px) {
+  .br-apps {
+    padding: 96px 0;
+  }
+
+  .br-apps__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .br-apps {
+    padding: 80px 0;
+  }
+
+  .br-apps__title {
+    font-size: 32px;
+  }
+
+  .br-apps__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .br-apps {
+    padding: 64px 0;
+  }
+
+  .br-apps__title {
+    font-size: 28px;
+  }
+}

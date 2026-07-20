@@ -1,0 +1,72 @@
+---
+import "../../styles/argentina/sales.css";
+import {
+  HidrogruaIcon,
+  ElevacionIcon,
+  SwatIcon,
+  EquiposEspecialesIcon,
+} from "../../../public/icons/index";
+---
+
+<section class="sales">
+  <div class="sales__inner">
+    <div class="sales__split">
+      <div class="sales__header">
+        <p class="sales__kicker" data-reveal="fade-up">
+          Tecnología diseñada para durar décadas
+        </p>
+        <h2 class="sales__title" data-reveal="fade-up">
+          Venta de Equipos directo de fábrica
+        </h2>
+        <p class="sales__text" data-reveal="fade-up">
+          Representamos oficialmente la línea completa de hidrogrúas
+          <strong> FERIOLI</strong>
+          <br />
+          Desde equipos de 3 hasta 80 tonelámetros, desarrollados para responder a
+          las necesidades de los sectores más exigentes.
+        </p>
+      </div>
+      <div>
+        <p class="sales__lead" data-reveal="fade-up">Además comercializamos:</p>
+        <div class="sales__grid" data-stagger>
+          <article class="product-card" data-reveal="fade-up">
+            <div class="product-card__icon-container">
+              <HidrogruaIcon />
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Hidrogrúas <br /> FERIOLI</h3>
+            </div>
+          </article>
+
+          <article class="product-card" data-reveal="fade-up">
+            <div class="product-card__icon-container">
+              <ElevacionIcon />
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Equipos <br /> de elevación</h3>
+            </div>
+          </article>
+
+          <article class="product-card" data-reveal="fade-up">
+            <div class="product-card__icon-container">
+              <SwatIcon />
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Retro <br /> SWAT</h3>
+            </div>
+          </article>
+
+          <article class="product-card" data-reveal="fade-up">
+            <div class="product-card__icon-container">
+              <EquiposEspecialesIcon />
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Equipos <br /> especiales</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+      <img class="sales__grua" src="/images/grua2.png" alt="" />
+    </div>
+  </div>
+</section>

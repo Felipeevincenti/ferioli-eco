@@ -1,0 +1,151 @@
+.br-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: end;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+
+.br-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.br-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.br-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.6) 30%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.7) 70%,
+    rgba(0, 0, 0, 0.92) 100%
+  );
+}
+
+.br-hero__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.br-hero__content {
+  max-width: 720px;
+}
+
+.br-hero__title {
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-white);
+  margin-bottom: 20px;
+}
+
+.br-hero__highlight {
+  color: var(--color-accent);
+}
+
+.br-hero__subtitle {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-white);
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.br-hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@keyframes br-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+.br-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.br-hero__btn:active {
+  transform: scale(0.97);
+}
+
+.br-hero__btn--primary {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.br-hero__btn--secondary {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid white;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .br-hero__btn--primary:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+  }
+
+  .br-hero__btn--secondary:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+}
+
+@media (max-width: 1024px) {
+  .br-hero__title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .br-hero__title {
+    font-size: 36px;
+  }
+
+  .br-hero__subtitle {
+    font-size: 16px;
+  }
+
+  .br-hero__actions {
+    flex-direction: column;
+  }
+
+  .br-hero__btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .br-hero__title {
+    font-size: 30px;
+  }
+}

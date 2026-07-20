@@ -1,0 +1,121 @@
+---
+import "../../styles/brasil/presence.css";
+---
+
+<section class="br-presence" id="presenca">
+  <div class="br-presence__bg"></div>
+
+  <div class="br-presence__inner">
+    <div class="br-presence__layout">
+      <div class="br-presence__content" data-reveal="slide-right">
+        <h2 class="br-presence__title">Presença</h2>
+        <p class="br-presence__subtitle">Presença Latino-Americana</p>
+
+        <div class="br-presence__country">
+          <span class="br-presence__country-label"> Argentina </span>
+          <div class="br-presence__items">
+            <button class="br-presence__btn" data-city="leones">
+              <span class="br-presence__btn-dot"></span>
+              <div class="br-presence__btn-info">
+                <span class="br-presence__btn-title">Leones</span>
+              </div>
+              <span class="br-presence__btn-line"></span>
+            </button>
+            <button class="br-presence__btn" data-city="rosario">
+              <span class="br-presence__btn-dot"></span>
+              <div class="br-presence__btn-info">
+                <span class="br-presence__btn-title">Rosário</span>
+              </div>
+              <span class="br-presence__btn-line"></span>
+            </button>
+            <button class="br-presence__btn" data-city="buenos-aires">
+              <span class="br-presence__btn-dot"></span>
+              <div class="br-presence__btn-info">
+                <span class="br-presence__btn-title">Buenos Aires</span>
+              </div>
+              <span class="br-presence__btn-line"></span>
+            </button>
+            <button class="br-presence__btn" data-city="salta">
+              <span class="br-presence__btn-dot"></span>
+              <div class="br-presence__btn-info">
+                <span class="br-presence__btn-title">Salta</span>
+              </div>
+              <span class="br-presence__btn-line"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="br-presence__country">
+          <span class="br-presence__country-label"> Brasil </span>
+          <div class="br-presence__items">
+            <button class="br-presence__btn is-active" data-city="farroupilha">
+              <span class="br-presence__btn-dot"></span>
+              <div class="br-presence__btn-info">
+                <span class="br-presence__btn-title">Farroupilha</span>
+              </div>
+              <span class="br-presence__btn-line"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="br-presence__country">
+          <span class="br-presence__country-label"> Peru </span>
+          <div class="br-presence__items">
+            <button class="br-presence__btn" data-city="lima">
+              <span class="br-presence__btn-dot"></span>
+              <div class="br-presence__btn-info">
+                <span class="br-presence__btn-title">Lima</span>
+              </div>
+              <span class="br-presence__btn-line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="br-presence__map" data-reveal="scale-in">
+        <img
+          id="presence-image"
+          class="br-presence__image"
+          src="/images/mapa-brasil.png"
+          alt="Mapa América Latina"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll(".br-presence__btn");
+  const image = document.getElementById("presence-image");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.classList.contains("is-active")) return;
+
+      buttons.forEach((btn) => btn.classList.remove("is-active"));
+      button.classList.add("is-active");
+
+      const city = button.dataset.city;
+
+      image.style.opacity = "0";
+      image.style.transform = "scale(.95)";
+
+      setTimeout(() => {
+        image.src = `/images/${city}.png`;
+        image.alt = city;
+
+        image.onload = () => {
+          image.style.opacity = "1";
+          image.style.transform = "scale(1)";
+        };
+
+        image.onerror = () => {
+          image.src = "/images/mapa-brasil.png";
+          image.alt = "Mapa América Latina";
+          image.style.opacity = "1";
+          image.style.transform = "scale(1)";
+        };
+      }, 180);
+    });
+  });
+</script>

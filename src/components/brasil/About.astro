@@ -1,0 +1,75 @@
+---
+import "../../styles/brasil/about.css";
+import { CheckIcon } from "../../../public/icons";
+---
+
+<section class="br-about" id="sobre">
+  <div class="br-about__inner">
+    <div class="br-about__content" data-reveal="slide-right">
+      <h2 class="br-about__title">
+        Engenharia própria.<br />
+        <span class="br-about__accent">Fabricação própria.</span>
+      </h2>
+      <p class="br-about__text">
+        A FERIOLI possui mais de 75 anos de experiência no desenvolvimento e
+        fabricação de equipamentos de elevação para os setores mais exigentes da
+        economia.
+      </p>
+      <p class="br-about__text">
+        Não importamos tecnologia. Projetamos, desenvolvemos e fabricamos nossos
+        próprios equipamentos, garantindo qualidade, robustez e confiabilidade
+        em cada projeto.
+      </p>
+      <p class="br-about__text">
+        Cada máquina é desenvolvida para oferecer máxima disponibilidade
+        operacional, baixa manutenção e alto desempenho.
+      </p>
+      <ul class="br-about__list">
+        <li class="br-about__list-item">
+          <span class="br-about__list-icon">
+            <CheckIcon />
+          </span>
+          Projetos desenvolvidos internamente
+        </li>
+        <li class="br-about__list-item">
+          <span class="br-about__list-icon">
+            <CheckIcon />
+          </span>
+          Controle total da qualidade
+        </li>
+        <li class="br-about__list-item">
+          <span class="br-about__list-icon">
+            <CheckIcon />
+          </span>
+          Mais de 75 anos de experiência
+        </li>
+      </ul>
+    </div>
+    <div class="br-about__media" data-reveal="slide-left">
+      <video
+        src="/videos/about-brasil.mp4"
+        class="br-about__video"
+        playsinline
+        preload="auto"
+        controls></video>
+      <div class="br-about__media-accent"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const video = document.querySelector(".br-about__video");
+  if (video) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.3 },
+    );
+    observer.observe(video);
+  }
+</script>

@@ -1,27 +1,25 @@
 ---
 import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import Evolution from "../components/Evolution.astro";
-import Official from "../components/Official.astro";
-import Sales from "../components/Sales.astro";
-import Repair from "../components/Repair.astro";
-import Choose from "../components/Choose.astro";
-import Webs from "../components/Webs.astro";
-import Products from "../components/Products.astro";
-import Presence from "../components/Presence.astro";
-import Contact from "../components/Contact.astro";
-import Footer from "../components/Footer.astro";
+import Argentina from "../components/argentina/Argentina.astro";
+import Brasil from "../components/brasil/Brasil.astro";
+
+const hostname = Astro.url.hostname;
+const isBrasil = hostname.includes("com.br");
+const lang = isBrasil ? "pt-BR" : "es";
+const titulo = isBrasil
+  ? "FERIOLI BRASIL — Guindastes e Equipamentos de Elevação"
+  : "FERIOLI ECO — Venta, Reparación y Servicio Técnico Oficial";
 ---
 
-<html lang="es">
+<!doctype html>
+<html lang={lang} data-country={isBrasil ? "br" : "ar"}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <title>FerioliEco</title>
+    <title>{titulo}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,22 +28,7 @@ import Footer from "../components/Footer.astro";
     />
   </head>
   <body>
-    <Header />
-    <Hero />
-    <Evolution />
-    <Official />
-    <div id="servicios">
-      <Sales />
-      <Repair />
-    </div>
-    <Choose />
-    <Products />
-    <div id="presencia">
-      <Webs />
-      <Presence />
-    </div>
-    <Contact />
-    <Footer />
+    {isBrasil ? <Brasil /> : <Argentina />}
   </body>
 </html>
 
@@ -56,11 +39,17 @@ import Footer from "../components/Footer.astro";
   const nav = document.querySelector(".header__nav");
   const links = nav?.querySelectorAll(".header__link");
 
-  window.addEventListener("scroll", () => {
-    header?.classList.toggle("header--scrolled", window.scrollY > 200);
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      header?.classList.toggle("header--scrolled", window.scrollY > 200);
+    },
+    { passive: true },
+  );
 
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const prefersReduced = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   if (!prefersReduced) {
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
@@ -82,15 +71,18 @@ import Footer from "../components/Footer.astro";
   });
 
   if ("IntersectionObserver" in window && sections.length) {
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          links.forEach((l) => l.classList.remove("header__link--active"));
-          const active = sections.find((s) => s.section === entry.target);
-          active?.link.classList.add("header__link--active");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            links.forEach((l) => l.classList.remove("header__link--active"));
+            const active = sections.find((s) => s.section === entry.target);
+            active?.link.classList.add("header__link--active");
+          }
         }
-      }
-    }, { rootMargin: "-40% 0px -55% 0px" });
+      },
+      { rootMargin: "-40% 0px -55% 0px" },
+    );
 
     sections.forEach(({ section }) => observer.observe(section));
   }
@@ -119,9 +111,11 @@ import Footer from "../components/Footer.astro";
     });
 
     document.addEventListener("click", (e) => {
-      if (nav.classList.contains("header__nav--open") &&
-          !nav.contains(e.target) &&
-          !toggle.contains(e.target)) {
+      if (
+        nav.classList.contains("header__nav--open") &&
+        !nav.contains(e.target) &&
+        !toggle.contains(e.target)
+      ) {
         closeMenu();
       }
     });

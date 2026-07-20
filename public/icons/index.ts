@@ -1,4 +1,3 @@
-// src/components/icons/index.ts
 export { default as HidrogruaIcon } from "./hidrogrua-icon.svg";
 export { default as ElevacionIcon } from "./elevacion-icon.svg";
 export { default as SwatIcon } from "./swat-icon.svg";

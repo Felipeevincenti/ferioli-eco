@@ -1,0 +1,102 @@
+.br-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 140px 0;
+  text-align: center;
+}
+
+.br-cta__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.br-cta__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.br-cta__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.br-cta__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.br-cta__title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-white);
+  margin-bottom: 16px;
+}
+
+.br-cta__subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  margin-bottom: 40px;
+}
+
+.br-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.br-cta__btn:active {
+  transform: scale(0.97);
+}
+
+.br-cta__btn--primary {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .br-cta__btn--primary:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+  }
+}
+
+#cta {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .br-cta__title {
+    font-size: 36px;
+  }
+
+  .br-cta {
+    padding: 100px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .br-cta__title {
+    font-size: 28px;
+  }
+}
