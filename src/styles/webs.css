@@ -163,16 +163,15 @@
 
     .webs__feriolisa,
     .webs__feriolibr {
-        padding: 0 24px;
+        padding: 40px 16px;
+    }
+
+    .webs__inner{
+        overflow-x: hidden;
     }
 }
 
 @media (max-width: 480px) {
-
-    .webs__feriolisa,
-    .webs__feriolibr {
-        padding: 40px 16px;
-    }
 
     .feriolisa__text,
     .feriolibr__text {
