@@ -25,7 +25,7 @@
     letter-spacing: -2px;
 }
 
-.contact__message{
+.contact__message {
     font-size: 24px;
 }
 
@@ -39,16 +39,9 @@
     justify-self: right;
     color: var(--color-primary);
     transition: color var(--duration-fast) var(--ease-out),
-                background var(--duration-fast) var(--ease-out),
-                transform var(--duration-fast) var(--ease-out);
+        background var(--duration-fast) var(--ease-out),
+        transform var(--duration-fast) var(--ease-out);
     cursor: pointer;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .contact__btn:hover {
-        color: var(--color-white);
-        background: var(--color-primary);
-    }
 }
 
 .contact__btn:active {
@@ -62,6 +55,7 @@
     justify-content: center;
     gap: 20px;
 }
+
 .contact__form-block {
     display: flex;
     gap: 20px;
@@ -78,7 +72,7 @@
     color: var(--color-primary);
     background: var(--color-primary-opacity);
     transition: border-color var(--duration-fast) var(--ease-out),
-                box-shadow var(--duration-fast) var(--ease-out);
+        box-shadow var(--duration-fast) var(--ease-out);
 }
 
 .contact__input:focus {
@@ -97,20 +91,25 @@
     align-self: flex-end;
     color: var(--color-white);
     transition: color var(--duration-fast) var(--ease-out),
-                background var(--duration-fast) var(--ease-out),
-                transform var(--duration-fast) var(--ease-out);
+        background var(--duration-fast) var(--ease-out),
+        transform var(--duration-fast) var(--ease-out);
     cursor: pointer;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .contact__submit:hover {
-        background: var(--color-white);
-        color: var(--color-accent);
-    }
 }
 
 .contact__submit:active {
     transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .contact__btn:hover {
+        color: var(--color-white);
+        background: var(--color-primary);
+    }
+
+    .contact__submit:hover {
+        background: var(--color-white);
+        color: var(--color-accent);
+    }
 }
 
 @media (max-width: 1200px) {
@@ -168,6 +167,6 @@
     }
 
     .contact__title {
-        font-size: 28px;
+        font-size: 32px;
     }
 }

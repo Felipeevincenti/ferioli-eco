@@ -81,12 +81,6 @@
     text-align: left;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .presence__btn:hover {
-        transform: translateX(8px);
-    }
-}
-
 .presence__btn:active {
     transform: scale(0.98);
 }
@@ -166,6 +160,12 @@
         transform 450ms var(--ease-out);
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .presence__btn:hover {
+        transform: translateX(8px);
+    }
+}
+
 @media(max-width:1200px) {
     .presence__inner {
         padding: 0 80px;
@@ -243,7 +243,7 @@
     }
 
     .presence__title {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .presence__subtitle {

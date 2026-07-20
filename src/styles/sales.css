@@ -29,7 +29,6 @@
     font-size: 18px;
     line-height: 1.8;
     color: var(--color-text-muted);
-    /* margin-bottom: 12px; */
 }
 
 .sales__text strong {
@@ -158,7 +157,7 @@
     }
 
     .sales__title {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .sales__grid {
@@ -169,4 +168,8 @@
     .sales__text {
         font-size: 16px;
     }
+    .product-card {
+        gap: 30px;
+    }
+    
 }

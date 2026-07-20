@@ -61,11 +61,9 @@
     cursor: pointer;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .feriolisa__button:hover {
-        background: var(--color-accent);
-        color: var(--color-white);
-    }
+.feriolisa__button:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
 }
 
 .feriolisa__button:active {
@@ -127,15 +125,20 @@
     cursor: pointer;
 }
 
+.feriolibr__button:active {
+    transform: scale(0.97);
+}
+
 @media (hover: hover) and (pointer: fine) {
+    .feriolisa__button:hover {
+        background: var(--color-accent);
+        color: var(--color-white);
+    }
+
     .feriolibr__button:hover {
         background: var(--color-white);
         color: var(--color-accent);
     }
-}
-
-.feriolibr__button:active {
-    transform: scale(0.97);
 }
 
 @media (max-width: 1200px) {
@@ -154,8 +157,8 @@
 }
 
 @media (max-width: 768px) {
-    .webs {
-        padding: 64px 0;
+    .webs__inner {
+        flex-direction: column;
     }
 
     .webs__feriolisa,
@@ -169,6 +172,11 @@
     .webs__feriolisa,
     .webs__feriolibr {
         padding: 40px 16px;
+    }
+
+    .feriolisa__text,
+    .feriolibr__text {
+        font-size: 16px;
     }
 
     .feriolisa__button,

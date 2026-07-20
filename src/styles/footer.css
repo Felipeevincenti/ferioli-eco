@@ -57,12 +57,6 @@
     width: fit-content;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .footer__link:hover {
-        color: var(--color-accent);
-    }
-}
-
 .footer__link:active {
     transform: scale(0.97);
 }
@@ -73,6 +67,12 @@
     padding: 24px 0;
     font-size: 13px;
     color: var(--color-gray-dark);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .footer__link:hover {
+        color: var(--color-accent);
+    }
 }
 
 @media (max-width: 1200px) {
