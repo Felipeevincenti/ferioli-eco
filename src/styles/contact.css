@@ -42,6 +42,7 @@
         background var(--duration-fast) var(--ease-out),
         transform var(--duration-fast) var(--ease-out);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .contact__btn:active {

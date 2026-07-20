@@ -55,10 +55,15 @@
     padding: 20px 30px;
     font-size: 16px;
     font-weight: bold;
+    color: var(--color-primary);
     transition: background var(--duration-fast) var(--ease-out),
         color var(--duration-fast) var(--ease-out),
         transform var(--duration-fast) var(--ease-out);
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .feriolisa__button:hover {
@@ -123,6 +128,10 @@
         color var(--duration-fast) var(--ease-out),
         transform var(--duration-fast) var(--ease-out);
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .feriolibr__button:active {
@@ -166,7 +175,7 @@
         padding: 40px 16px;
     }
 
-    .webs__inner{
+    .webs__inner {
         overflow-x: hidden;
     }
 }
