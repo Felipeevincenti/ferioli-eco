@@ -1,21 +1,24 @@
 .contact {
-    padding: 200px 0;
+    padding: 100px 0;
     color: var(--color-primary);
 }
 
 .contact__inner {
     padding: 0 200px;
-    margin: 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 40px;
 }
 
 .contact__content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 25px;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    text-align: center;
 }
 
 .contact__title {
