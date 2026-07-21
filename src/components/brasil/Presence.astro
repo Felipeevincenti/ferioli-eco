@@ -14,7 +14,7 @@ import "../../styles/brasil/presence.css";
         <div class="br-presence__country">
           <span class="br-presence__country-label"> Argentina </span>
           <div class="br-presence__items">
-            <button class="br-presence__btn" data-city="leones">
+            <button class="br-presence__btn is-active" data-city="leones">
               <span class="br-presence__btn-dot"></span>
               <div class="br-presence__btn-info">
                 <span class="br-presence__btn-title">Leones</span>
@@ -24,11 +24,11 @@ import "../../styles/brasil/presence.css";
             <button class="br-presence__btn" data-city="rosario">
               <span class="br-presence__btn-dot"></span>
               <div class="br-presence__btn-info">
-                <span class="br-presence__btn-title">Rosário</span>
+                <span class="br-presence__btn-title">Rosario</span>
               </div>
               <span class="br-presence__btn-line"></span>
             </button>
-            <button class="br-presence__btn" data-city="buenos-aires">
+            <button class="br-presence__btn" data-city="bsas">
               <span class="br-presence__btn-dot"></span>
               <div class="br-presence__btn-info">
                 <span class="br-presence__btn-title">Buenos Aires</span>
@@ -48,7 +48,7 @@ import "../../styles/brasil/presence.css";
         <div class="br-presence__country">
           <span class="br-presence__country-label"> Brasil </span>
           <div class="br-presence__items">
-            <button class="br-presence__btn is-active" data-city="farroupilha">
+            <button class="br-presence__btn" data-city="farroupilha">
               <span class="br-presence__btn-dot"></span>
               <div class="br-presence__btn-info">
                 <span class="br-presence__btn-title">Farroupilha</span>
@@ -76,8 +76,8 @@ import "../../styles/brasil/presence.css";
         <img
           id="presence-image"
           class="br-presence__image"
-          src="/images/mapa-brasil.png"
-          alt="Mapa América Latina"
+          src="/images/mapas/brasil/leones.png"
+          alt="Leones"
         />
       </div>
     </div>
@@ -101,7 +101,7 @@ import "../../styles/brasil/presence.css";
       image.style.transform = "scale(.95)";
 
       setTimeout(() => {
-        image.src = `/images/${city}.png`;
+        image.src = `/images/mapas/brasil/${city}.png`;
         image.alt = city;
 
         image.onload = () => {
@@ -109,12 +109,12 @@ import "../../styles/brasil/presence.css";
           image.style.transform = "scale(1)";
         };
 
-        image.onerror = () => {
-          image.src = "/images/mapa-brasil.png";
-          image.alt = "Mapa América Latina";
-          image.style.opacity = "1";
-          image.style.transform = "scale(1)";
-        };
+        // image.onerror = () => {
+        //   image.src = "/images/mapa-brasil.png";
+        //   image.alt = "Mapa América Latina";
+        //   image.style.opacity = "1";
+        //   image.style.transform = "scale(1)";
+        // };
       }, 180);
     });
   });

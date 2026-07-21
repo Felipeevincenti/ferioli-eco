@@ -56,7 +56,7 @@ import "../../styles/argentina/presence.css";
                 <img
                     id="presence-image"
                     class="presence__image"
-                    src="/images/rosario.png"
+                    src="/images/mapas/argentina/rosario.png"
                     alt="Rosario"
                 />
             </div>
@@ -67,16 +67,6 @@ import "../../styles/argentina/presence.css";
 <script>
     const buttons = document.querySelectorAll(".presence__btn");
     const image = document.getElementById("presence-image");
-    const map = document.querySelector(".presence__map");
-    const prefersReduced = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    let rafId = null;
-    let targetRotateX = 0;
-    let targetRotateY = 0;
-    let currentRotateX = 0;
-    let currentRotateY = 0;
 
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -92,8 +82,7 @@ import "../../styles/argentina/presence.css";
             image.style.transform = "scale(.95)";
 
             setTimeout(() => {
-                image.src = `/images/${city}.png`;
-
+                image.src = `/images/mapas/argentina/${city}.png`;
                 image.alt = city;
 
                 image.onload = () => {
