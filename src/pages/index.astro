@@ -3,8 +3,8 @@ import "../styles/global.css";
 import Argentina from "../components/argentina/Argentina.astro";
 import Brasil from "../components/brasil/Brasil.astro";
 
-const hostname = Astro.url.hostname;
-const isBrasil = hostname.includes("com.br");
+const hostname = Astro.url.hostname.toLowerCase();
+const isBrasil = hostname.includes("ferioli-brasil.netlify.app");
 const lang = isBrasil ? "pt-BR" : "es";
 const titulo = isBrasil
   ? "FERIOLI BRASIL — Guindastes e Equipamentos de Elevação"
