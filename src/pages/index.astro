@@ -47,14 +47,31 @@ const titulo = isBrasil
     { passive: true },
   );
 
+  header?.classList.toggle("header--scrolled", window.scrollY > 200);
+
   const prefersReduced = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;
+
+  const toggle = document.querySelector(".header__toggle");
+
+  function closeMenu() {
+    document.body.classList.remove("menu-open");
+    nav?.classList.remove("header__nav--open");
+    toggle?.classList.remove("header__toggle--active");
+  }
+
+  function openMenu() {
+    document.body.classList.add("menu-open");
+    nav?.classList.add("header__nav--open");
+    toggle?.classList.add("header__toggle--active");
+  }
 
   if (!prefersReduced) {
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
       link.addEventListener("click", (e) => {
         e.preventDefault();
+        closeMenu();
         const target = document.querySelector(link.getAttribute("href"));
         if (target) {
           target.scrollIntoView({ behavior: "smooth" });
@@ -87,27 +104,10 @@ const titulo = isBrasil
     sections.forEach(({ section }) => observer.observe(section));
   }
 
-  const toggle = document.querySelector(".header__toggle");
   if (toggle && nav) {
-    function closeMenu() {
-      document.body.classList.remove("menu-open");
-      nav.classList.remove("header__nav--open");
-      toggle.classList.remove("header__toggle--active");
-    }
-
-    function openMenu() {
-      document.body.classList.add("menu-open");
-      nav.classList.add("header__nav--open");
-      toggle.classList.add("header__toggle--active");
-    }
-
     toggle.addEventListener("click", () => {
       const isOpen = nav.classList.contains("header__nav--open");
       isOpen ? closeMenu() : openMenu();
-    });
-
-    links?.forEach((link) => {
-      link.addEventListener("click", closeMenu);
     });
 
     document.addEventListener("click", (e) => {

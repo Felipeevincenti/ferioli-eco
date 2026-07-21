@@ -101,7 +101,7 @@
 }
 
 .header--scrolled .header__toggle-bar {
-    background: var(--color-primary);
+    background: var(--color-white);
 }
 
 .header__toggle:active {
