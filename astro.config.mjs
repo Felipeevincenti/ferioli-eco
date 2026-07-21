@@ -6,4 +6,11 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
     output: 'server',
     adapter: netlify(),
+    server: {
+        host: true,
+        allowedHosts: [
+            'ferioli.com.ar',
+            'ferioli.com.br',
+        ],
+    }
 });
