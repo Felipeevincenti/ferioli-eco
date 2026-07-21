@@ -3,34 +3,19 @@
   overflow: hidden;
   padding: 140px 0;
   text-align: center;
-}
-
-.br-cta__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.br-cta__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.br-cta__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 100%),
+    url("/images/brasil/cta.jpg") bottom / cover no-repeat;
 }
 
 .br-cta__inner {
   position: relative;
   z-index: 2;
+  padding: 0 200px;
+  width: 100%;
+}
+
+.br-cta__content {
   max-width: 700px;
   margin: 0 auto;
 }
@@ -85,7 +70,17 @@
   scroll-margin-top: 80px;
 }
 
+@media (max-width: 1200px) {
+  .br-cta__inner {
+    padding: 0 80px;
+  }
+}
+
 @media (max-width: 768px) {
+  .br-cta__inner {
+    padding: 0 24px;
+  }
+
   .br-cta__title {
     font-size: 36px;
   }
@@ -96,6 +91,10 @@
 }
 
 @media (max-width: 480px) {
+  .br-cta__inner {
+    padding: 0 16px;
+  }
+
   .br-cta__title {
     font-size: 28px;
   }

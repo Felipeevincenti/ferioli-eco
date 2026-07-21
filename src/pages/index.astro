@@ -8,16 +8,15 @@ const isBrasil =
   hostname === "ferioli-brasil.netlify.app" || hostname.includes(".br");
 const lang = isBrasil ? "pt-BR" : "es";
 const titulo = isBrasil
-  ? "FERIOLI BRASIL — Guindastes e Equipamentos de Elevação"
-  : "FERIOLI ECO — Venta, Reparación y Servicio Técnico Oficial";
+  ? "Ferioli Brasil — Guindastes e Equipamentos de Elevação"
+  : "Ferioli Eco — Venta, Reparación y Servicio Técnico Oficial";
 ---
 
 <!doctype html>
 <html lang={lang} data-country={isBrasil ? "br" : "ar"}>
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/images/argentina/patron.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{titulo}</title>

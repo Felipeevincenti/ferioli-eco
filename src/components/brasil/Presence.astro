@@ -76,7 +76,7 @@ import "../../styles/brasil/presence.css";
         <img
           id="presence-image"
           class="br-presence__image"
-          src="/images/mapas/brasil/leones.png"
+          src="/images/brasil/mapas/leones.png"
           alt="Leones"
         />
       </div>
@@ -101,20 +101,13 @@ import "../../styles/brasil/presence.css";
       image.style.transform = "scale(.95)";
 
       setTimeout(() => {
-        image.src = `/images/mapas/brasil/${city}.png`;
+        image.src = `/images/brasil/mapas/${city}.png`;
         image.alt = city;
 
         image.onload = () => {
           image.style.opacity = "1";
           image.style.transform = "scale(1)";
         };
-
-        // image.onerror = () => {
-        //   image.src = "/images/mapa-brasil.png";
-        //   image.alt = "Mapa América Latina";
-        //   image.style.opacity = "1";
-        //   image.style.transform = "scale(1)";
-        // };
       }, 180);
     });
   });

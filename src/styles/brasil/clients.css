@@ -1,14 +1,17 @@
 .br-clients {
   padding: 120px 0;
   position: relative;
-  background: var(--color-primary);
+  background: var(--color-white);
+  background: linear-gradient(#ffffffe5), url("../../../public/images/brasil/patron-png.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
   color: var(--color-white);
 }
 
 .br-clients__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 200px;
+  width: 100%;
 }
 
 .br-clients__title {
@@ -16,7 +19,7 @@
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 20px;
-  color: var(--color-white);
+  color: var(--color-accent);
 }
 
 .br-clients__header {
@@ -25,7 +28,7 @@
 
 .br-clients__desc {
   font-size: 16px;
-  color: var(--color-text-light);
+  color: var(--color-primary);
   max-width: 500px;
   margin: 0 auto 48px;
   line-height: 1.6;
@@ -40,7 +43,11 @@
 }
 
 .br-clients__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: opacity var(--duration-fast) var(--ease-out);
+  max-width: 120px;
 }
 
 .br-clients__item:hover {
@@ -48,13 +55,22 @@
 }
 
 .br-clients__item img {
-  height: 60px;
+  max-width: 110px;
+  max-height: 70px;
   width: auto;
+  height: auto;
   display: block;
+  object-fit: contain;
 }
 
 #clientes {
   scroll-margin-top: 80px;
+}
+
+@media (max-width: 1200px) {
+  .br-clients__inner {
+    padding: 0 80px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -68,6 +84,10 @@
     padding: 80px 0;
   }
 
+  .br-clients__inner {
+    padding: 0 24px;
+  }
+
   .br-clients__title {
     font-size: 32px;
   }
@@ -76,6 +96,10 @@
 @media (max-width: 480px) {
   .br-clients {
     padding: 64px 0;
+  }
+
+  .br-clients__inner {
+    padding: 0 16px;
   }
 
   .br-clients__title {

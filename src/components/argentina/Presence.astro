@@ -56,7 +56,7 @@ import "../../styles/argentina/presence.css";
                 <img
                     id="presence-image"
                     class="presence__image"
-                    src="/images/mapas/argentina/rosario.png"
+                    src="/images/argentina/mapas/rosario.png"
                     alt="Rosario"
                 />
             </div>
@@ -82,7 +82,7 @@ import "../../styles/argentina/presence.css";
             image.style.transform = "scale(.95)";
 
             setTimeout(() => {
-                image.src = `/images/mapas/argentina/${city}.png`;
+                image.src = `/images/argentina/mapas/${city}.png`;
                 image.alt = city;
 
                 image.onload = () => {
@@ -92,43 +92,4 @@ import "../../styles/argentina/presence.css";
             }, 180);
         });
     });
-
-    // if (!prefersReduced) {
-    //     map.addEventListener("mousemove", (e) => {
-    //         if (image.style.opacity === "0") return;
-
-    //         const rect = map.getBoundingClientRect();
-    //         const x = e.clientX - rect.left;
-    //         const y = e.clientY - rect.top;
-    //         const centerX = rect.width / 2;
-    //         const centerY = rect.height / 2;
-
-    //         const maxAngle = 12;
-    //         targetRotateY = ((x - centerX) / centerX) * maxAngle;
-    //         targetRotateX = -((y - centerY) / centerY) * maxAngle;
-
-    //         if (!rafId) {
-    //             const step = () => {
-    //                 currentRotateX += (targetRotateX - currentRotateX) * 0.12;
-    //                 currentRotateY += (targetRotateY - currentRotateY) * 0.12;
-
-    //                 image.style.transform =
-    //                     `perspective(800px) scale(1) rotateX(${currentRotateX}deg) rotateY(${currentRotateY}deg)`;
-
-    //                 if (Math.abs(targetRotateX - currentRotateX) > 0.01 ||
-    //                     Math.abs(targetRotateY - currentRotateY) > 0.01) {
-    //                     rafId = requestAnimationFrame(step);
-    //                 } else {
-    //                     rafId = null;
-    //                 }
-    //             };
-    //             rafId = requestAnimationFrame(step);
-    //         }
-    //     });
-
-    // map.addEventListener("mouseleave", () => {
-    //     targetRotateX = 0;
-    //     targetRotateY = 0;
-    // });
-    // }
 </script>

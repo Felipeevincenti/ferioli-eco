@@ -3,13 +3,14 @@
   position: relative;
   background: var(--color-primary);
   color: var(--color-white);
-  overflow-x: hidden;
+  background-color: var(--color-accent);
+  background-image: url("https://transparenttextures.com/patterns/black-felt.png");
+  overflow: hidden;
 }
 
 .br-after__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 200px;
+  width: 100%;
 }
 
 .br-after__content {
@@ -48,22 +49,49 @@
 }
 
 .br-after__service-icon {
-  color: var(--color-accent);
+  color: var(--color-white);
   flex-shrink: 0;
+}
+
+.br-after__image {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
 }
 
 #pos-venda {
   scroll-margin-top: 80px;
 }
 
+@media (max-width: 1550px) {
+  .br-after__image {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .br-after__inner {
+    padding: 0 80px;
+  }
+}
+
 @media (max-width: 768px) {
   .br-after {
     padding: 80px 0;
+  }
+
+  .br-after__inner {
+    padding: 0 24px;
   }
 }
 
 @media (max-width: 480px) {
   .br-after {
     padding: 64px 0;
+  }
+
+  .br-after__inner {
+    padding: 0 16px;
   }
 }

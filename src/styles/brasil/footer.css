@@ -1,7 +1,6 @@
 .br-footer__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 200px;
+  width: 100%;
 }
 
 .br-footer {
@@ -95,12 +94,21 @@
 }
 
 .br-footer__bottom-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 200px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .br-footer__inner {
+    padding: 0 80px;
+  }
+
+  .br-footer__bottom-inner {
+    padding: 0 80px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -115,7 +123,12 @@
     gap: 32px;
   }
 
+  .br-footer__inner {
+    padding: 0 24px;
+  }
+
   .br-footer__bottom-inner {
+    padding: 0 24px;
     flex-direction: column;
     gap: 8px;
     text-align: center;

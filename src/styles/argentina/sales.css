@@ -99,7 +99,7 @@
     -webkit-user-drag: none;
 }
 
-@media (max-width: 1770px) {
+@media (max-width: 1600px) {
     .sales__grua {
         display: none;
     }
