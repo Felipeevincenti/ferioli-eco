@@ -12,8 +12,6 @@
     display: flex;
     flex-direction: column;
     background: linear-gradient(#550a0fc0), url("../../../public/images/argentina/panoramica.png");
-    /* background: linear-gradient(#550a0fc0), url("../../../public/images/argentina/6C7A3727.jpg"); */
-    /* background-size: 180%; */
     background-position: right 70%;
     padding: 80px 200px;
     gap: 24px;

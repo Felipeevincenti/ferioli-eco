@@ -1,7 +1,7 @@
 .contact {
     padding: 100px 0;
     color: var(--color-primary);
-    background: linear-gradient(#ffffffe9), url("../../../public/images/brasil/patron.jpg");
+    background: linear-gradient(#ffffffe9), url("../../../public/images/patron.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;

@@ -2,7 +2,7 @@
   padding: 120px 0;
   position: relative;
   background: var(--color-white);
-  background: linear-gradient(#ffffffe5), url("../../../public/images/brasil/patron-png.png");
+  background: linear-gradient(#ffffffe5), url("../../../public/images/patron.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80%;
